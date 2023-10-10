@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+<body>
+
+    <h1>Varun kumarreddy Bhavanam speed check</h1>
+
+    <div id="target"> Your time</div>
+    <div id="counter"> Count</div>
+
+
+<button class="btn" id="time">Start Timer</button>
+<button class="btn" id="react" onclick="recordTime()">React</button>
+
+<script>
+    var reactTime=undefined;
+
+    function recordTime(){
+        reactTime=Date.now();
+        console.log("reaction time "+reactTime);
+    }
+    document.getElementById("react").onclick= recordTime;
+    
+
+</script>
+    
+</body>
+</html>
