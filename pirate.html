@@ -138,7 +138,12 @@
             </div>
         </div>
 
+
     </div>
+
+    <button class="btn btn-danger" onclick="newGame()" >New game</button>
+
+
 <!-- javascript code-->
     <script>
 
@@ -188,8 +193,6 @@
             var treasureCol = treasureLocation % 5;
             var lastRow = Math.floor(lastCheck / 5);
             var lastCol = lastCheck % 5;
-
-
             if (
                 Math.abs(lastRow - treasureRow) <= 1 &&
                 Math.abs(lastCol - treasureCol) <= 1 &&
@@ -197,7 +200,6 @@
             ) {
                 var helpText = "Can smell it";
             }
-
             else if (
                 Math.abs(lastRow - treasureRow) + Math.abs(lastCol - treasureCol) === 2
             ) {
@@ -209,11 +211,30 @@
             penalty += 2;
             document.getElementById("penalty").textContent = `penalty is  ${penalty}`;
             document.getElementById("help").textContent = helpText;
-
             document.getElementById("help-button").onclick = help;
-
         }
 
+
+        function newGame() {
+        checkCount = 0;
+        penalty = 0;
+        lastCheck = 0;
+        treasureLocation = Math.floor(Math.random() * 25);
+        trapLocation = Math.floor(Math.random() * 25);
+    
+        document.getElementById("locations").innerHTML = "Number of locations checked is : " + checkCount;
+        document.getElementById("penalty").innerHTML = "Penalty is : " + penalty;
+    
+        var imageElements = document.getElementsByTagName("img");
+        for (let i = 0; i < imageElements.length; i++) {
+            imageElements[i].src = "treasure maps.jpg";
+        }
+        gameOver = false;
+
+
+        document.getElementById("locations").innerHTML = "Number of locations checked is : " + checkCount;
+        document.getElementById("penalty").innerHTML = "Penalty is : " + penalty;
+    }
     </script>
 
 

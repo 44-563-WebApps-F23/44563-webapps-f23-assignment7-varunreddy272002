@@ -28,7 +28,7 @@
             for (let i = 0; i <= 8; i++) {
                 setTimeout(function () {
                     document.getElementById("counter").innerHTML = "Count: " + i;
-                }, (8 - i) * 1000);
+                }, (8 - i) * 1000)(Math.floor(Math.random() * (10 - 2 + 1)) + 2 - i) * 1000;
             }
         }
         setTimeout(function () {
@@ -39,7 +39,7 @@
                 var difference = endTime - reactTime;
                 document.getElementById("target").innerHTML = "Time was " + difference + " ms";
             }
-        }, 8000);
+        }, Math.floor(Math.random() * (10 - 2 + 1)) + 2 * 1000);
 
         document.getElementById("time").onclick = startTime;
 

@@ -53,9 +53,9 @@
 <br><br>
     <button onclick="remove()"class=" btn btn-success">Remove</button>
 <br><br>
-    <button onclick="addFront()"class=" btn btn-success">Add front</button>
+    <button onclick="addFront()"class=" btn btn-success">Add front</button><br><br>
 
-
+<button onclick="swap()" class="btn btn-primary">Swap</button>
 
     <script>
         function endtext() {
@@ -87,7 +87,14 @@
             flex.insertBefore(output, firstChild);
         }
 
-
+        function swap() {
+            let mergerItems = document.getElementsByClassName("merger");
+            let length = mergerItems.length;
+            let item = document.getElementsByClassName("merger")[Math.floor(Math.random() * length)];
+            let flex = document.getElementById("target");
+            firstChild = flex.firstChild;
+            flex.insertBefore(item, firstChild);
+    }
     </script>
 
 
